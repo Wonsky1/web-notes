@@ -1,0 +1,10 @@
+<header class="d-flex justify-content-center py-3">
+  <ul class="nav nav-pills">
+    {% url 'notes:note-list' as note_list_url %}
+    <li class="nav-item"><a href="{% url 'notes:note-list' %}" class="nav-link {% if request.path == note_list_url %}active{% endif %}" aria-current="page">Home</a></li>
+    {% url 'notes:note-archived-list' as archived_note_list_url %}
+    <li class="nav-item"><a href="{% url 'notes:note-archived-list' %}" class="nav-link {% if request.path == archived_note_list_url %}active{% endif %}">Archived</a></li>
+    {% url 'notes:tag-list' as tag_list_url %}
+    <li class="nav-item"><a href="{% url 'notes:tag-list' %}" class="nav-link {% if request.path == tag_list_url %}active{% endif %}">Tags</a></li>
+  </ul>
+</header>
