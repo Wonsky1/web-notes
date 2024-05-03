@@ -36,4 +36,4 @@ class Note(models.Model):
         return self.name
 
     class Meta:
-        ordering = ("-is_pinned", "-created_at", )
+        ordering = ("-is_pinned", "-is_favourite", "-created_at", )
