@@ -147,3 +147,76 @@ body{
          max-width: 216px
      }
  }
+
+.custom-circle {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.pin-section {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tags-section {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.pin {
+    color: inherit;
+    outline: none;
+}
+
+
+.favourite-button {
+    color: inherit;
+    outline: none;
+}
+
+.favourite-button:hover {
+    color: orange;
+}
+
+.archive-button {
+    color: inherit;
+    outline: none;
+}
+
+.delete-button {
+    color: inherit;
+    outline: none;
+}
+
+.delete-button:hover {
+    color: red;
+}
+
+.edit-button {
+    color: inherit;
+    outline: none;
+}
+
+.buttons-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.github {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: inherit;
+    outline: none;
+}
+
+.is-favourite {
+    color: orange;
+}
+
+.is-favourite:hover {
+    color: black;
+}
