@@ -5,7 +5,7 @@ from textwrap import shorten
 register = template.Library()
 
 
-@register.filter(name='truncate_text')
+@register.filter(name="truncate_text")
 def truncate_text(text, limit=100, ending="..."):
     """
     Truncates text using the textwrap module.

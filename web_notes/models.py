@@ -3,27 +3,29 @@ from django.db import models
 
 
 def validate_color(value):
-    if not value.startswith('#') or len(value) != 7:
-        raise ValidationError('Invalid color format (must be #RRGGBB)')
+    if not value.startswith("#") or len(value) != 7:
+        raise ValidationError("Invalid color format (must be #RRGGBB)")
 
 
 class Tag(models.Model):
     name = models.CharField(max_length=63)
-    color = models.CharField(max_length=7, default="#FF0000", validators=[validate_color])
+    color = models.CharField(
+        max_length=7, default="#FF0000", validators=[validate_color]
+    )
 
     def __str__(self):
         return self.name
 
     def clean_color(self):
-        color = self.cleaned_data['color']
-        if not color.startswith('#') or len(color) != 7:
-            raise ValidationError('Invalid color format (must be #RRGGBB)')
+        color = self.cleaned_data["color"]
+        if not color.startswith("#") or len(color) != 7:
+            raise ValidationError("Invalid color format (must be #RRGGBB)")
         return color
 
 
 class WordCountField(models.IntegerField):
 
-    def __init__(self, unique_count = None, *args, **kwargs):
+    def __init__(self, unique_count=None, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.unique_count = unique_count
 
@@ -42,12 +44,12 @@ class WordCountField(models.IntegerField):
 
     @staticmethod
     def calculate_word_count(instance):
-        description = getattr(instance, 'description', '')
+        description = getattr(instance, "description", "")
         return len(description.split())
 
     @staticmethod
     def calculate_unique_word_count(instance):
-        description = getattr(instance, 'description', '')
+        description = getattr(instance, "description", "")
         return len(set(description.split()))
 
 
@@ -66,4 +68,8 @@ class Note(models.Model):
         return self.name
 
     class Meta:
-        ordering = ("-is_pinned", "-is_favourite", "-created_at", )
+        ordering = (
+            "-is_pinned",
+            "-is_favourite",
+            "-created_at",
+        )

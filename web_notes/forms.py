@@ -9,11 +9,12 @@ class NoteForm(forms.ModelForm):
         queryset=Tag.objects.all(),
         widget=ModelSelect2MultipleWidget(
             model=Tag,
-            search_fields=['name__icontains'],
-            attrs={'data-minimum-input-length': 0}
+            search_fields=["name__icontains"],
+            attrs={"data-minimum-input-length": 0},
         ),
         required=False,
     )
+
     class Meta:
         model = Note
         fields = ["name", "description", "tags"]
@@ -21,8 +22,7 @@ class NoteForm(forms.ModelForm):
 
 class TagForm(forms.ModelForm):
     color = forms.CharField(
-        label='Color', max_length=7,
-        widget=forms.TextInput(attrs={'type': 'color'})
+        label="Color", max_length=7, widget=forms.TextInput(attrs={"type": "color"})
     )
 
     class Meta:
