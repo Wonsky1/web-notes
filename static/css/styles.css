@@ -224,3 +224,8 @@ body{
 li > .btn-light, li > .btn-dark {
     margin-left: 20px;
 }
+
+.dropdown {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
