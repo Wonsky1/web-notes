@@ -1,5 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="dropdown d-inline-block">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="sortingDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Sort by
+  </button>
+  <div class="dropdown-menu" aria-labelledby="sortingDropdown">
+    <form method="get">
+      {% for option_key, option_label in sorting_options %}
+      <button class="dropdown-item" type="submit" name="sorting" value="{{ option_key }}">{{ option_label }}</button>
+      {% endfor %}
+    </form>
+  </div>
+</div>
   <div class="list-group">
     {% for tag in tag_list %}
       <div class="row d-flex">
