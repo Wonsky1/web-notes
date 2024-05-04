@@ -17,7 +17,10 @@ def change_pin_status(request: HttpRequest, pk: int) -> HttpResponseRedirect:
     )
 
 
-def change_archive_status(request: HttpRequest, pk: int) -> HttpResponseRedirect:
+def change_archive_status(
+    request: HttpRequest,
+    pk: int
+) -> HttpResponseRedirect:
     referring_page = request.GET.get("referring_page")
     note = Note.objects.get(id=pk)
     note.is_archived = not note.is_archived
@@ -29,7 +32,10 @@ def change_archive_status(request: HttpRequest, pk: int) -> HttpResponseRedirect
     )
 
 
-def change_favourite_status(request: HttpRequest, pk: int) -> HttpResponseRedirect:
+def change_favourite_status(
+    request: HttpRequest,
+    pk: int
+) -> HttpResponseRedirect:
     referring_page = request.GET.get("referring_page")
     note = Note.objects.get(id=pk)
     note.is_favourite = not note.is_favourite

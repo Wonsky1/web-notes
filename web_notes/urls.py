@@ -18,7 +18,11 @@ from web_notes.views import (
 
 urlpatterns = [
     path("", NoteListView.as_view(), name="note-list"),
-    path("archived/", ArchivedNoteListView.as_view(), name="note-archived-list"),
+    path(
+        "archived/",
+        ArchivedNoteListView.as_view(),
+        name="note-archived-list"
+    ),
     path("create/", NoteCreateView.as_view(), name="note-create"),
     path("<int:pk>/update/", NoteUpdateView.as_view(), name="note-update"),
     path("<int:pk>/delete/", NoteDeleteView.as_view(), name="note-delete"),
@@ -27,7 +31,9 @@ urlpatterns = [
     path("tags/<int:pk>/update/", TagUpdateView.as_view(), name="tag-update"),
     path("tags/<int:pk>/delete/", TagDeleteView.as_view(), name="tag-delete"),
     path(
-        "change-pin-status/<int:pk>/", change_pin_status, name="note-change-pin-status"
+        "change-pin-status/<int:pk>/",
+        change_pin_status,
+        name="note-change-pin-status"
     ),
     path(
         "change-favourite-status/<int:pk>/",

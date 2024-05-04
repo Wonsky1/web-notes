@@ -62,7 +62,11 @@ class Note(models.Model):
     is_favourite = models.BooleanField(default=False)
     is_archived = models.BooleanField(default=False)
     word_count = WordCountField(default=0, editable=False)
-    unique_word_count = WordCountField(default=0, editable=False, unique_count=True)
+    unique_word_count = WordCountField(
+        default=0,
+        editable=False,
+        unique_count=True
+    )
 
     def __str__(self):
         return self.name
