@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load utils %}
 {% block content %}
-{% if note_list %}
 <div id="note-full-container" class="note-has-grid row">
   {% for note in note_list %}
     <div class="col-md-4 single-note-item all-category" style="">
@@ -52,9 +51,9 @@
 
       </div>
     </div>
+  {% empty %}
+    <h2>Ooops, looks like its empty here</h2>
   {% endfor %}
 </div>
-{% else %}
-  <h2>There are no notes</h2>
-{% endif %}
+
 {% endblock %}
