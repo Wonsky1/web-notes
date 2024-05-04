@@ -1,4 +1,4 @@
-<header class="d-flex justify-content-between py-3">
+<header class="d-flex justify-content-between py-3 border-bottom">
   <ul class="nav nav-pills">
     {% url 'notes:note-list' as note_list_url %}
     <li class="nav-item">
@@ -21,7 +21,5 @@
             <a href="{% url 'notes:tag-create' %}" class="nav-link btn btn-light">Create a tag</a>
 
     </li>
-    <li class="nav-item">
-      <!-- Second additional link -->
-    </li>
+  </ul>
 </header>
