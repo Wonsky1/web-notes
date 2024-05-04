@@ -21,7 +21,7 @@ class NoteForm(forms.ModelForm):
 
 class TagForm(forms.ModelForm):
     color = forms.CharField(
-        label='hex_color', max_length=7,
+        label='Color', max_length=7,
         widget=forms.TextInput(attrs={'type': 'color'})
     )
 
