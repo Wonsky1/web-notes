@@ -1,4 +1,4 @@
-<header class="d-flex justify-content-center py-3">
+<header class="d-flex justify-content-between py-3">
   <ul class="nav nav-pills">
     {% url 'notes:note-list' as note_list_url %}
     <li class="nav-item">
@@ -13,4 +13,15 @@
       <a href="{% url 'notes:tag-list' %}" class="nav-link btn btn-{% if request.path == tag_list_url %}dark{% else %}light{% endif %}">Tags</a>
     </li>
   </ul>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a href="{% url 'notes:note-create' %}" class="nav-link btn btn-light" aria-current="page" style="margin-left: 0px;">Create a note</a>
+    </li>
+    <li class="nav-item">
+            <a href="{% url 'notes:tag-create' %}" class="nav-link btn btn-light">Create a tag</a>
+
+    </li>
+    <li class="nav-item">
+      <!-- Second additional link -->
+    </li>
 </header>
