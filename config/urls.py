@@ -7,5 +7,9 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("web_notes.urls", namespace="web_notes")),
     path("django_select2/", include("django_select2.urls")),
-    re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
+    re_path(
+        r'^static/(?P<path>.*)$',
+        serve,
+        {'document_root': settings.STATIC_ROOT}
+    ),
 ]
