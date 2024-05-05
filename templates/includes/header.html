@@ -1,0 +1,24 @@
+<header class="d-flex justify-content-between py-3 border-bottom">
+  <ul class="nav nav-pills">
+    {% url 'notes:note-list' as note_list_url %}
+    <li class="nav-item">
+      <a href="{% url 'notes:note-list' %}" class="nav-link btn btn-{% if request.path == note_list_url %}dark{% else %}light{% endif %}" aria-current="page" style="margin-left: 0px;">Home</a>
+    </li>
+    {% url 'notes:note-archived-list' as archived_note_list_url %}
+    <li class="nav-item">
+      <a href="{% url 'notes:note-archived-list' %}" class="nav-link btn btn-{% if request.path == archived_note_list_url %}dark{% else %}light{% endif %}">Archived</a>
+    </li>
+    {% url 'notes:tag-list' as tag_list_url %}
+    <li class="nav-item">
+      <a href="{% url 'notes:tag-list' %}" class="nav-link btn btn-{% if request.path == tag_list_url %}dark{% else %}light{% endif %}">Tags</a>
+    </li>
+  </ul>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a href="{% url 'notes:note-create' %}" class="nav-link btn btn-light" aria-current="page" style="margin-left: 0px;">Create a note</a>
+    </li>
+    <li class="nav-item">
+      <a href="{% url 'notes:tag-create' %}" class="nav-link btn btn-light">Create a tag</a>
+    </li>
+  </ul>
+</header>
