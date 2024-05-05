@@ -84,6 +84,7 @@ python manage.py runserver
 - Added pinned functional, which after enabling would make a note pined to the top.
 - Default sorting: pinned notes -> favourite notes -> most recent notes
 - Added description field for a note
+- I have chosen not to create "DetailView" for any of the models, because as for me, it is better to go straight into the update view rather than to detail view.
 - I have chosen not to show tag names inside the note, because it looked worse as for me:
 ![image](https://i.imgur.com/c520xYn.jpeg)
 - I have not created filtering for archived/not archived notes, because as for me, it is worse for users to use it as a filter, so I have made it as another endpoint
