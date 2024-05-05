@@ -8,7 +8,7 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["notes-app-vefz.onrender.com"]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -64,8 +64,8 @@ DATABASES = {
     }
 }
 
-db_from_env = dj_database_url.config(conn_max_age=500) # Comment this line if you want to use sqlite
-DATABASES["default"].update(db_from_env) # Comment this line if you want to use sqlite
+db_from_env = dj_database_url.config(conn_max_age=500)  # Comment this line if you want to use sqlite
+DATABASES["default"].update(db_from_env)  # Comment this line if you want to use sqlite
 
 AUTH_PASSWORD_VALIDATORS = [
     {
