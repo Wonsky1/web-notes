@@ -83,6 +83,15 @@ class NoteListView(generic.ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(object_list=object_list, **kwargs)
 
+        prev_tag_filters = self.request.GET.getlist("tag_filter")
+        prev_sorting = self.request.GET.get("sorting")
+
+        if prev_tag_filters:
+            context["prev_tag_filters"] = prev_tag_filters
+
+        if prev_sorting:
+            context["prev_sorting"] = prev_sorting
+
         context["sorting_options"] = [
             ("", "Default"),
             ("name_asc", "Name: A -> Z"),
