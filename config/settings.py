@@ -6,9 +6,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ["SECRET_KEY"]
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["notes-app-vefz.onrender.com"]
+ALLOWED_HOSTS = ["notes-app-vefz.onrender.com", "127.0.0.1"]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -64,8 +64,8 @@ DATABASES = {
     }
 }
 
-db_from_env = dj_database_url.config(conn_max_age=500)  # Comment this line if you want to use sqlite
-DATABASES["default"].update(db_from_env)  # Comment this line if you want to use sqlite
+# db_from_env = dj_database_url.config(conn_max_age=500)  # Comment this line if you want to use sqlite
+# DATABASES["default"].update(db_from_env)  # Comment this line if you want to use sqlite
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -91,7 +91,6 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = "static/"
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
