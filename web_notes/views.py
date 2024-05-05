@@ -49,6 +49,7 @@ def change_favourite_status(
 
 class NoteListView(generic.ListView):
     model = Note
+    queryset = Note.objects.prefetch_related("tags").filter(is_archived=False)
 
     def get_queryset(self):
         queryset = super().get_queryset()
