@@ -6,7 +6,7 @@ Welcome to the Notes application web service! This is a Django-based web applica
 ![image](https://i.imgur.com/4KSK7cp.png)
 
 > You can visit deployed version of the Notes application web service here:
-> http://127.0.0.1:8000/
+> [Check it out](https://notes-app-vefz.onrender.com/)
 
 
 ## Getting Started
